@@ -13,7 +13,6 @@ def get_path_in():
 def get_path_out():
     named_directory_out.set(filedialog.askdirectory())
 
-
 def run_batch_removal_tool():
     pic_list = os.listdir(named_directory_in.get())
     save_number = 0
@@ -44,26 +43,26 @@ root = tk.Tk()
 
 named_directory_in = tk.StringVar(root, "None Selected")
 named_directory_out = tk.StringVar(root, "None Selected")
-
 root.geometry("640x400")
-
+#GUI Title
 ttk.Label(root, text="Uncha - Batch Background Removal Tool", padding=(30, 30)).pack()
 
+#File In Button and Info Lable
 choose_path_in_button = ttk.Button(root, text="Choose Input Path", command=get_path_in).pack()
-
 ttk.Label(root, textvariable=named_directory_in).pack(pady=6)
 
+#File Out Button and Infor Lable
 choose_path_out_button = ttk.Button(root, text="Choose Output Path", command=get_path_out).pack()
-
 ttk.Label(root, textvariable=named_directory_out).pack(pady=6)
 
+#Run Tool Button
 run_batch_removal_tool_button = ttk.Button(
     root,
     text="Start background Removal Tool",
     command=threading.Thread(target=run_batch_removal_tool).start
 ).pack(pady=20)
 
-
+#Quit GUI and process Button
 quit_button = ttk.Button(root, text="Quit", command=root.destroy).pack()
 
 root.mainloop()
