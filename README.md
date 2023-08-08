@@ -1,4 +1,6 @@
-# bg_remover_with_GUI
+# Uncha - by Travis Lamberte
+
+# Batch background removal tool with GUI
 
 bg remover is a python program meant to be ran inside of an editor, use any editor that has access to os. (Or run from terminal/CMD) First setup a folder where you'll keep you images that need the bg removed, then create an empty folder in another location where the images with transparent backgrounds will get saved.
 
